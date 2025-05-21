@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EV Matcher Quiz</title>
+        <link rel="stylesheet" href="quiz.css">
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            .floating-header {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background-color: #4062bf;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 6px;
+                font-display: white;
+                z-index: 1001;
+                transition: top 0.001s ease-out;
+                font-size: x-large;
+            }
+
+            .floating-header a {
+                color: white !important;
+                text-decoration: none;
+            }
+
+            .floating-header a:visited {
+                color: white !important;
+            }
+
+            .floating-header a:hover {
+                color: white !important;
+                text-decoration: none;
+            }
+
+            header {
+                background-color: transparent;
+                padding: 0.5rem;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                text-align: right;
+            }
+
+            nav {
+                padding-right: 30px;
+                padding-top: 10px;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                padding: 0.8rem 1.5rem;
+                margin: 0 0.7rem;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                font-size: 1.5rem;
+                font-weight: 800;
+                display: inline-block;
+            }
+
+            nav a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+            }
+
+            a:visited {
+                color: white;
+                text-decoration-color: white;
+            }
+
+            .quiz-section {
+                padding-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="floating-header" id="floatingHeader">
+            <a href="home.html">ECO MATCH</a>
+        </div>
+
+        <header>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="specs.html">Specs</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <script>
+            const header = document.getElementById('floatingHeader');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                header.style.top = (scrollY + 20) + 'px';
+            });
+        </script>
+
+        <section class="quiz-section">
+            <div class="container">
+                <div class="quiz-container">
+                    <h1>Match With Your Perfect EV Now</h1>
+                    <div id="welcome-screen" class="active">
+                        <p align="left">Find out your perfect EV today!</p>
+                        <button id="start-quiz" class="btn">Start Quiz</button>
+                    </div>
+                    <div id="question-container" class="hidden">
+                        <div id="question"></div>
+                        <div id="answer-buttons" class="btn-grid"></div>
+                        <button id="next-btn" class="btn next-btn hidden">Next</button>
+                    </div>
+                    <div id="result-container" class="hidden">
+                        <h2>Your Perfect Match</h2>
+                        <div id="result-content"></div>
+                        <button id="restart-btn" class="btn">Take Quiz Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js" type="module"></script>
+    </body>
+</html> 

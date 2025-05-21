@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Eco Match</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #4062bf;
+        }
+
+        .floating-header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #4062bf;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            font-display: white;
+            z-index: 1001;
+            transition: top 0.001s ease-out;
+            font-size: x-large;
+        }
+
+        .floating-header a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        .floating-header a:visited {
+            color: white !important;
+        }
+
+        .floating-header a:hover {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: transparent;
+            padding: 0.5rem;
+            width: 100%;
+            position: right;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: right;
+        }
+
+        nav {
+            padding-right: 30px;
+            padding-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.7rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 120px auto 100px;
+            padding: 20px;
+        }
+
+        .about-section {
+            background-color: white;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-section h2 {
+            color: #4062bf;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .about-section-content {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .about-section-text {
+            flex: 1;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .about-section-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .about-section-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .about-section-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            background-color: #4062bf;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4062bf;
+        }
+
+        .stat-box:hover .stat-number {
+            color: white;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .help-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .help-item:hover {
+            background-color: #4062bf;
+            color: white;
+        }
+
+        .footer {
+            background-color: #4062bf;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .interactive-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4062bf;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .interactive-button:hover {
+            background-color: #334d99;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-header" id="floatingHeader">
+        <a href="home.html">ECO MATCH</a>
+    </div>
+
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="specs.html">Specs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="about-content">
+        <div class="about-section">
+            <h2>About Eco Match</h2>
+            <div class="about-section-content">
+                <div class="about-section-text">
+                    <p>Welcome to Eco Match, your trusted partner in finding the perfect electric vehicle (EV) that matches your lifestyle, needs, and preferences. We understand that transitioning to an electric vehicle is a significant decision, and we're here to make that journey easier and more informed.</p>
+                    <p>Founded with a vision to accelerate the adoption of sustainable transportation, Eco Match combines advanced matching algorithms with comprehensive EV knowledge to help you make the best choice for your future vehicle.</p>
+                    <a href="quiz.html" class="interactive-button">Take the Quiz</a>
+                </div>
+                <div class="about-section-image">
+                    <img src="images/tesie.jpg" alt="Electric Vehicle Future">
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Impact</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div>EVs Matched</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div>Happy Drivers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="2000">0</div>
+                    <div>CO₂ Tons Saved</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="84">0</div>
+                    <div>EV Models</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <div class="about-section-content">
+                <div class="about-section-image">
+                    <img src="images/lambo.jpg" alt="EV Charging Station">
+                </div>
+                <div class="about-section-text">
+                    <p>Our mission is to simplify the EV selection process by providing personalized recommendations based on your specific requirements. Whether you're concerned about range, budget, performance, or charging infrastructure, our sophisticated matching system takes all these factors into account to find your ideal electric vehicle match.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>How We Help</h2>
+            <div class="help-grid">
+                <div class="help-item">
+                    <h3>Personalized Matching</h3>
+                    <p>Our quiz takes into account your daily commute, lifestyle, and preferences</p>
+                </div>
+                <div class="help-item">
+                    <h3>Comprehensive Database</h3>
+                    <p>Access to detailed specifications of the latest EV models</p>
+                </div>
+                <div class="help-item">
+                    <h3>Unbiased Recommendations</h3>
+                    <p>We provide objective comparisons to help you make informed decisions</p>
+                </div>
+                <div class="help-item">
+                    <h3>Environmental Impact</h3>
+                    <p>We help you understand the positive environmental impact of your choice</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Commitment</h2>
+            <div class="about-section-content">
+                <div class="about-section-text">
+                    <p>At Eco Match, we're committed to promoting sustainable transportation solutions while ensuring our users find vehicles that truly fit their needs. We continuously update our database and refine our matching algorithm to provide the most accurate and helpful recommendations possible.</p>
+                </div>
+                <div class="about-section-image">
+                    <img src="images/bmw.jpg" alt="Sustainable Future">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const header = document.getElementById('floatingHeader');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            header.style.top = (scrollY + 20) + 'px';
+        });
+
+        const stats = document.querySelectorAll('.stat-number');
+        
+        function animateStats() {
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const current = parseInt(stat.textContent);
+                const increment = target / 100;
+                
+                if (current < target) {
+                    stat.textContent = Math.ceil(current + increment);
+                    setTimeout(animateStats, 20);
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                }
+            });
+        });
+
+        document.querySelector('.stats-container').parentElement.classList.add('stats-section');
+        observer.observe(document.querySelector('.stats-section'));
+    </script>
+
+    <div class="footer">
+        © 2025 ECO MATCH . All rights reserved.
+    </div>
+</body>
+</html>

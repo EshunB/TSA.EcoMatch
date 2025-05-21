@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Eco Match</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #4062bf;
+        }
+
+        .floating-header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #4062bf;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            font-display: white;
+            z-index: 1001;
+            transition: top 0.001s ease-out;
+            font-size: x-large;
+        }
+
+        .floating-header a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        .floating-header a:visited {
+            color: white !important;
+        }
+
+        .floating-header a:hover {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: transparent;
+            padding: 0.5rem;
+            width: 100%;
+            position: right;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: right;
+        }
+
+        nav {
+            padding-right: 30px;
+            padding-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.7rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 120px auto 100px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h2 {
+            color: #4062bf;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-method:hover {
+            background-color: #4062bf;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #4062bf;
+        }
+
+        .contact-method:hover .contact-icon {
+            color: white;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            color: #4062bf;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4062bf;
+            box-shadow: 0 0 0 3px rgba(64, 98, 191, 0.1);
+        }
+
+        .submit-button {
+            background-color: #4062bf;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #334d99;
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            background-color: #4062bf;
+            transform: translateY(-3px);
+        }
+
+        .social-link:hover i {
+            color: white;
+        }
+
+        .social-link i {
+            color: #4062bf;
+            font-size: 20px;
+        }
+
+        .footer {
+            background-color: #4062bf;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Success message styling */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-header" id="floatingHeader">
+        <a href="home.html">ECO MATCH</a>
+    </div>
+
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="specs.html">Specs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <div class="contact-method">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <div>
+                    <h3>Visit Us</h3>
+                    <p>123 EV Street, Green City, EC 12345</p>
+                </div>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-phone contact-icon"></i>
+                <div>
+                    <h3>Call Us</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-envelope contact-icon"></i>
+                <div>
+                    <h3>Email Us</h3>
+                    <p>info@ecomatch.com</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <div class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send us a Message</h2>
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+                <div id="successMessage" class="success-message">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Floating header
+        const header = document.getElementById('floatingHeader');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            header.style.top = (scrollY + 20) + 'px';
+        });
+
+        // Form submission handling
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For now, we'll just show the success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+            
+            return false;
+        }
+    </script>
+
+    <div class="footer">
+        © 2025 ECO MATCH . All rights reserved.
+    </div>
+</body>
+</html>

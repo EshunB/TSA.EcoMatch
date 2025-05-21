@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sortable Table</title>
+
+  <script src="sorttable.js"></script>
+  <link rel="stylesheet" href="specs.css">
+  <style>
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #4062bf;
+      padding: 8px;
+      text-align: left;
+      color: #fff;
+    }
+
+    th {
+      background-color: #4062bf5f;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    th:hover {
+      background-color: #4062bfa7;
+      color: #fff;
+    }
+
+    header {
+            background-color: transparent;
+            padding: 0.5rem;
+            width: 100%;
+            position: right;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: right;
+        }
+
+        nav {
+            padding-right: 30px;
+            padding-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+          
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.7rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        nav a:hover {
+          color: #4062bf;
+            background-color: #ffffff;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    
+  </style>
+
+
+  
+
+
+<header>
+  <nav>
+      <a href="home.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="specs.html">Specs</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+
+<style id="ev_21677_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+  color: #fff;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Aptos Narrow", sans-serif;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:5px;
+	padding-right:5px;
+	padding-left:5px;
+  border: 1px solid #4062bf;
+	mso-ignore:padding;
+  color: #fff;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Aptos Narrow", sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl63
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	white-space:normal;}
+.xl64
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+  border: 1px solid #4062bf;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl65
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:none;
+	border-left:1.0pt solid windowtext;}
+.xl66
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl67
+	{mso-style-parent:style0;
+	text-align:right;}
+.xl68
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl69
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl70
+	{mso-style-parent:style0;
+	mso-number-format:"\0022$\0022\#\,\#\#0_\)\;\[Red\]\\\(\0022$\0022\#\,\#\#0\\\)";
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl71
+	{mso-style-parent:style0;
+	mso-number-format:"\0022$\0022\#\,\#\#0_\)\;\[Red\]\\\(\0022$\0022\#\,\#\#0\\\)";
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl72
+	{mso-style-parent:style0;
+	mso-number-format:"\0022$\0022\#\,\#\#0_\)\;\[Red\]\\\(\0022$\0022\#\,\#\#0\\\)";
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl73
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl74
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl75
+	{mso-style-parent:style0;
+    color: #fff;
+	font-family:"Aptos Narrow";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl76
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:.5pt solid #4062bf;
+	border-right:1.0pt solid #4062bf;
+	border-bottom:1.0pt solid #4062bf;
+	border-left:1.0pt solid #4062bf;}
+.xl77
+	{mso-style-parent:style0;
+    color: #fff;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+.xl78
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl79
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl80
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;}
+.xl81
+	{mso-style-parent:style0;
+    color: #fff;
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;}
+-->
+</style>
+
+
+<body link="#467886" vlink="#96607D">
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+
+
+<table id="carSpecs">
+
+
+
+
+<table id="carSpecs" class="sortable">
+  <thead>
+    <tr>
+      <th onclick="sortbyx(0)">Car Model</th>
+      <th onclick="sortbyx(1)">Starting Price</th>
+      <th onclick="sortbyx(2)">Brand</th>
+      <th onclick="sortbyx(3)">Range</th>
+      <th onclick="sortbyx(4)">0 To 60</th>
+      <th onclick="sortbyx(5)">Top Speed</th>
+      <th onclick="sortbyx(6)">Lifestyle</th>
+      <th onclick="sortbyx(7)">Horsepower</th>
+      <th onclick="sortbyx(8)">Trunk Space</th>
+      <th onclick="sortbyx(9)">Seats</th>
+      <th onclick="sortbyx(10)">Charge Time</th>
+      <th onclick="sortbyx(11)">Max Power</th>
+      <th onclick="sortbyx(12)">Year</th>
+    </tr>
+  </thead>
+
+  <script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("carSpecs");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc";
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Acura ZDX</td>
+  <td class=xl74 style='border-top:none;border-left:none'>$64,500 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>acura</td>
+  <td class=xl74 style='border-top:none;border-left:none'>278 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl68>325 HP</td>
+  <td class=xl74 style='border-top:none'>98.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>265 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi e-tron GT</td>
+  <td class=xl74 align=right style='border-top:none;border-left:none'>$106,500 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>249 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.3 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>245 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sport</td>
+  <td class=xl69 style='border-top:none'>670 HP</td>
+  <td class=xl79 style='border-top:none'>62 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>22 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q4
+  e-tron<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl74 align=right style='border-top:none;border-left:none'>$49,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>265 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.8 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>160 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl69 style='border-top:none'>295 HP</td>
+  <td class=xl79 style='border-top:none'>53 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>36 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>150 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q4
+  Sportback e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$58,200 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>242 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>160 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>295 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>54 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>36 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>150 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q5 PHEV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$57,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>362 miles<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>268 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>90 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>100 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q6 e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$66,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>307 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>210 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>456 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>60 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>21 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q8 e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$74,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>285 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>335 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20.1 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>31 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi Q8
+  Sportback e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$77,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>300 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.2 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>190 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>402 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20.1 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>31 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi SQ6
+  e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$80,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>276 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>230 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>509 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>18.6 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>21 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi SQ8
+  e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$89,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>253 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>500 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20.1 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>31 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Audi SQ8
+  Sportback e-tron</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$92,600 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>audi</td>
+  <td class=xl74 style='border-top:none;border-left:none'>253 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>402 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>31 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>BMW i4</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$57,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>bmw</td>
+  <td class=xl74 style='border-top:none;border-left:none'>227 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>335 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>60 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>BMW i5</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$67,100 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>bmw</td>
+  <td class=xl74 style='border-top:none;border-left:none'>239 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>590 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>54 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>BMX i7</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$105,700 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>bmw</td>
+  <td class=xl74 style='border-top:none;border-left:none'>268 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>650 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>29 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>105 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>BMX iX</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$75,150 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>bmw</td>
+  <td class=xl74 style='border-top:none;border-left:none'>279 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>124 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>516 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>28 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Cadillac
+  Celestiq</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$300,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>303 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>655 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>31.6 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>111 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Cadillac
+  Escalade IQ</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$127,700 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>450 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>600 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>28 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>32 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Cadillac Lyriq</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$58,595 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>314 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>340 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>25 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Chevrolet
+  Blazer EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$44,600 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>283 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>283 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>28 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>23 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Chevrolet
+  Equinox EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$33,600 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>319 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>118 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>213 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>22.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>18 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>110 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Chevrolet
+  Silverado EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$55,000 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>390 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>115 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>510 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Dodge Charger
+  Daytona</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$57,995 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>dodge</td>
+  <td class=xl74 style='border-top:none;border-left:none'>241 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>137 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>800 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>39 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>90 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>230 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Fiat 500e</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$32,500 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>fiat</td>
+  <td class=xl74 style='border-top:none;border-left:none'>180 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>9.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>93 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Hatchback</td>
+  <td class=xl79 style='border-top:none'>118 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>11 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>60 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Ford E-Transit</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$45,700 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>ford</td>
+  <td class=xl74 style='border-top:none;border-left:none'>126 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>9.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>75 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Van</td>
+  <td class=xl79 style='border-top:none'>266 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>97 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Ford F-150
+  Lightning</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$62,995 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>ford</td>
+  <td class=xl74 style='border-top:none;border-left:none'>230 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>266 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>96 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>45 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>80 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Ford Mustang
+  Mach-E</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$39,495 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>ford</td>
+  <td class=xl74 style='border-top:none;border-left:none'>320 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>124 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>264 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>97 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>73 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Genesis
+  Electric G80</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$74,375 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>genesis</td>
+  <td class=xl74 style='border-top:none;border-left:none'>282 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>149 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>365 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>14.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Genesis
+  Electric GV70</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$66,950 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>genesis</td>
+  <td class=xl74 style='border-top:none;border-left:none'>236 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>149 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>430 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Genesis GV60</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$52,350 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>genesis</td>
+  <td class=xl74 style='border-top:none;border-left:none'>294 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>149 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>314 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>82.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>GMC Hummer EV
+  Pickup</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$96,550 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>312. miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>118 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Pickup</td>
+  <td class=xl79 style='border-top:none'>625 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>54 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>45 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>100 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>GMC Hummer EV
+  Suv</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$96,550 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>312 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.4 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>106 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>625 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>17.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>34 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>100 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>GMC Sierra EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$89,900 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>general motors</td>
+  <td class=xl74 style='border-top:none;border-left:none'>390 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.2 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>106 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>754 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>19 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>25 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>90 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Honda Prologue</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$47,400 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>honda</td>
+  <td class=xl74 style='border-top:none;border-left:none'>273 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>247HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>43.3 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Hyundai<span
+  style='mso-spacerun:yes'>  </span>KONA Electric</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$31,975 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>hyundai</td>
+  <td class=xl74 style='border-top:none;border-left:none'>258 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>104 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>133 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50.4 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl75 style='height:15.0pt;border-top:none'>Hyundai IONIQ
+  5</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$42,600 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>hyundai</td>
+  <td class=xl74 style='border-top:none;border-left:none'>361 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.2 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>115 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>168 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>49.3 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30<span
+  style='mso-spacerun:yes'>  </span>minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Hyundai IONIQ
+  5 N</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$66,200 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>hyundai</td>
+  <td class=xl74 style='border-top:none;border-left:none'>221 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>641 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Hyundai IONIQ
+  6</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$37,850 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>hyundai</td>
+  <td class=xl74 style='border-top:none;border-left:none'>361 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>115 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>320 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>35 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>150 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Hyundai NEXO
+  Fuel Cell</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$60,135 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>hyundai</td>
+  <td class=xl74 style='border-top:none;border-left:none'>380 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.4 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>111 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>161 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>160 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Jeep Wagonneer
+  S</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$65,200 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>jeep</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.0 seocnds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>124 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>442 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>76.4 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>230 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>KIA EV6</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$42,400 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>kia</td>
+  <td class=xl74 style='border-top:none;border-left:none'>310 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.8 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>114 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>320 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>KIA EV9</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$54,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>kia</td>
+  <td class=xl74 style='border-top:none;border-left:none'>305 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>355 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>54.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>KIA Niro</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$26,990 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>kia</td>
+  <td class=xl74 style='border-top:none;border-left:none'>253 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>104 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>201 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>33.3 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Lexus RZ</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$42,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>lexus</td>
+  <td class=xl74 style='border-top:none;border-left:none'>220 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>168 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>308 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>117 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>250 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Lucid Air</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$87,400 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>lucid</td>
+  <td class=xl74 style='border-top:none;border-left:none'>516 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>168 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>480 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>34 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>150 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Lucid Gravity</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$94,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>lucid</td>
+  <td class=xl74 style='border-top:none;border-left:none'>450 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>124 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>800 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>69.8 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Maserati
+  GranCabrio Folgore</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$184,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>maserati</td>
+  <td class=xl74 style='border-top:none;border-left:none'>250 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>124 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Convertible</td>
+  <td class=xl79 style='border-top:none'>1,200 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>39.2 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>110 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Maserati
+  GranTurismo Folgore</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$174,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>maserati</td>
+  <td class=xl74 style='border-top:none;border-left:none'>300 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.9 seconds</td>
+  <td class=xl65 style='border-left:none'>124 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>1,200 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>17 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Maserati
+  Grecale Folgore</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$78,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>maserati</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.6 seconds</td>
+  <td class=xl74 style='border-left:none'>93 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>590 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>115 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>110 kw</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes EQB
+  SUV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$53,050 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>250 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>8.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>225 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>62 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes EQE
+  Sedan</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$74,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>308 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.2 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>288 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>45 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>96 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes EQE
+  SUV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$77,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>302 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.4 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>288 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>92.5 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>96 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes EQS
+  Sedan</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$104,400 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>390 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>536 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>27 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>118 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes EQS
+  SUV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$105,250 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>323 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>650 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>35 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>118 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes
+  G-Class SUV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$148,250 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>379 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.3 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Jeep</td>
+  <td class=xl79 style='border-top:none'>443 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>32.7 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>34 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mercedes
+  Maybach EQS SUV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$179,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mercedes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>280 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>649 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Mini
+  Countryman Electric</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$39,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>mini</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>127 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>181 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Nissan ARIYA</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$39,770 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>nissan</td>
+  <td class=xl74 style='border-top:none;border-left:none'>289 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.8 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>115 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>214 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>54 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>160 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Nissan LEAF</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$28,140 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>nissan</td>
+  <td class=xl74 style='border-top:none;border-left:none'>212 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>93 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>147 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>62 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>60 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>180 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Polestar 2</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$49,800 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>polestar</td>
+  <td class=xl74 style='border-top:none;border-left:none'>350 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>408 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Polestar 3</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$60,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>polestar</td>
+  <td class=xl74 style='border-top:none;border-left:none'>300 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>517 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>90 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Porsche Cross
+  Tursimo</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$92,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>porsche</td>
+  <td class=xl74 style='border-top:none;border-left:none'>300 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>161 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Wagon</td>
+  <td class=xl79 style='border-top:none'>375 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>49 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Porsche Macan
+  EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$59,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>porsche</td>
+  <td class=xl74 style='border-top:none;border-left:none'>263 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>450 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>48 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>15 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Porsche Taycan</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$89,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>porsche</td>
+  <td class=xl74 style='border-top:none;border-left:none'>321 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.4 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>161 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>402 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>32 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Ram ProMaster
+  EV</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$52,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>ram</td>
+  <td class=xl74 style='border-top:none;border-left:none'>150 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>75 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Van</td>
+  <td class=xl79 style='border-top:none'>260 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>49 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Rivian R1S</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$75,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>rivian</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>533 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Rivian R1T</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$69,900 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>rivian</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>533 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>43 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>32 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Rolls-Royce
+  Spectre</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$413,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>rolls royce</td>
+  <td class=xl74 style='border-top:none;border-left:none'>260 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Coupe</td>
+  <td class=xl79 style='border-top:none'>260 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>72.7 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>185 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Subaru
+  Solterra</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$44,995 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>subaru</td>
+  <td class=xl74 style='border-top:none;border-left:none'>228 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>577 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>49.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>190 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla
+  Cyberbeast</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$99,990 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>320 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>845 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120.7 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>145 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla
+  Cybertruck</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$72,490 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>325 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Truck</td>
+  <td class=xl79 style='border-top:none'>600 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120.7 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>10 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model 3
+  Long Range</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$39,990 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>346 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.2 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>450 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>24 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model 3
+  Performance</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$47,490 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>298 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>163 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>510 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>24 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model S</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$79,990 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>410 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.1 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>670 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>28 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model S
+  Plaid</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$94,990 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>348 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>1.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Sedan</td>
+  <td class=xl79 style='border-top:none'>1,020 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>28 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>190 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model X</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$84,990 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>329 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.8 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>155 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>670 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>88 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model
+  X<span style='mso-spacerun:yes'>  </span>Plaid</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$99,990 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>314 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2.5 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>163 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>1,020 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>88 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>170 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Tesla Model Y</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$41,490 </td>
+  <td class=xl75 style='border-top:none;border-left:none'>tesla</td>
+  <td class=xl74 style='border-top:none;border-left:none'>327 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>125 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>450 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>76 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>132 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Toyota bZ4X</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$37,070 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>toyota</td>
+  <td class=xl74 style='border-top:none;border-left:none'>252 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>218 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>53 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>VinFast VF8</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$53,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>vinfast</td>
+  <td class=xl74 style='border-top:none;border-left:none'>292 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>214 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>64.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>220 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>VinFast VF9</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$59,000 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>vinfast</td>
+  <td class=xl74 style='border-top:none;border-left:none'>369 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>6.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>402 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Volkswagen
+  ID.4</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$39,995 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>volkswagen</td>
+  <td class=xl74 style='border-top:none;border-left:none'>275 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>99 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>422 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>43.7 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>20 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>140 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Volkswagen
+  ID.Buzz</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$59,995 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>volkswagen</td>
+  <td class=xl74 style='border-top:none;border-left:none'>260 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>8.0 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>99 mph</td>
+  <td class=xl74 style='border-top:none;border-left:none'>Van</td>
+  <td class=xl79 style='border-top:none'>201 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70.9 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>200 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Volvo C40</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$54,895 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>volvo</td>
+  <td class=xl74 style='border-top:none;border-left:none'>297 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>4.7 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>402 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>40 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>130 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Volvo EX30</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$46,195 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>volvo</td>
+  <td class=xl74 style='border-top:none;border-left:none'>253 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.6 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>268 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>90 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>70 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>270 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2024</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl74 style='height:15.0pt;border-top:none'>Volvo EX40</td>
+<td class=xl74 align=right style='border-top:none;border-left:none'>$53,795 </td>
+  <td class=xl74 style='border-top:none;border-left:none'>volvo</td>
+  <td class=xl74 style='border-top:none;border-left:none'>296 miles</td>
+  <td class=xl74 style='border-top:none;border-left:none'>3.9 seconds</td>
+  <td class=xl74 style='border-top:none;border-left:none'>126 mph</td>
+  <td class=xl77 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl79 style='border-top:none'>200 HP</td>
+  <td class=xl74 style='border-top:none;border-left:none'>50 cu ft</td>
+  <td class=xl74 style='border-top:none;border-left:none'>5 seats</td>
+  <td class=xl74 style='border-top:none;border-left:none'>30 minutes</td>
+  <td class=xl74 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl74 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl74 style='height:16.0pt;border-top:none'>Volvo
+  EX90<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl76 align=right style='border-top:none;border-left:none'>$81,290 </td>
+  <td class=xl76 style='border-top:none;border-left:none'>volvo</td>
+  <td class=xl76 style='border-top:none;border-left:none'>310 miles</td>
+  <td class=xl76 style='border-top:none;border-left:none'>4.5 seconds</td>
+  <td class=xl76 style='border-top:none;border-left:none'>112 mph</td>
+  <td class=xl81 style='border-top:none;border-left:none'>SUV</td>
+  <td class=xl80 style='border-top:none'>402 HP</td>
+  <td class=xl76 style='border-top:none;border-left:none'>39.2 cu ft</td>
+  <td class=xl76 style='border-top:none;border-left:none'>7 seats</td>
+  <td class=xl76 style='border-top:none;border-left:none'>50 minutes</td>
+  <td class=xl76 style='border-top:none;border-left:none'>120 KW</td>
+  <td class=xl76 style='border-top:none;border-left:none'>2025</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=259 style='width:194pt'></td>
+  <td width=143 style='width:107pt'></td>
+  <td width=140 style='width:105pt'></td>
+  <td width=139 style='width:104pt'></td>
+  <td width=128 style='width:96pt'></td>
+  <td width=132 style='width:99pt'></td>
+  <td width=132 style='width:99pt'></td>
+  <td width=132 style='width:99pt'></td>
+  <td width=144 style='width:108pt'></td>
+  <td width=165 style='width:124pt'></td>
+  <td width=139 style='width:104pt'></td>
+  <td width=143 style='width:107pt'></td>
+  <td width=109 style='width:82pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+
+
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<! home page -------->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Match</title>
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+    <div class="floating-header" id="floatingHeader">
+        <a href="home.html">ECO MATCH</a>
+    </div>
+
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="specs.html">Specs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <script>
+        const header = document.getElementById('floatingHeader');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            header.style.top = (scrollY + 20) + 'px'; 
+        });
+    </script>
+
+    <section class="hero">
+        <div class="overlay">
+            <h1>WELCOME TO</h1>
+            <h2 style="font-size: 100px">ECO MATCH</h2>
+            <h1>The Best Place to Find Your Dream EV</h1>
+        </div>
+    </section>
+
+    <section class="courses" id="courses">
+        <h2>Find Your Perfect Electric Vehicle</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <img src="images/cars.jpg" style="width: 550px; height: auto;  border-radius: 8px;">
+                <p> </p>
+                <h3>OUR MISSION</h3>
+                <p>At Eco Match, we aim to make a perfect eco match for everyone.</p>
+                <p>We find the perfect electric vehicle to suit your needs.</p>
+                <p>We take your input from our short two minute quiz,</p>
+                <p>and match you with one out of 86 electric vehicles</p>
+                <p>currently available in the US.</p>
+            </div>
+            <div class="course-card">
+                <img src="images/sales.jpg" style= "width: 550px; height: auto; border-radius: 8px;">
+                <p> </p>
+                <h3>LET US HELP YOU</h3>
+                <p>We pride ourselves in customer satisfaction.</p>
+                <p>We believe in helping the environment.</p>
+                <p>We strive to make our customers happy.</p>
+                <p>One Person. One Family. One Car at a time.</p>
+                    
+                    
+            </div>
+
+            <div class="quiz-card">
+                      <a href="quiz.html" class="custom-button">TAKE THE QUIZ</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    
+
+  <div class="footer">
+    © 2025 ECO MATCH . All rights reserved.
+  </div>
+</body>
+</html>
+
