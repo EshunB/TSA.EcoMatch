@@ -9,3 +9,7 @@ When we first read the prompt, we were stuck for days and didn't have a clue wha
 As more and more electric vehicles are hitting the market, it can be overwhelming for people to decide on which EV is best suited for their needs. The process of finding the right one might turn people away from buying an electric vehicle.
 
 So our project utilizes a large database and a short but efficient quiz to help customers find the perfect EV car for them in less than two minutes.
+
+
+
+__ If you encounter any issues running the Quiz on your local machine, please make sure you are using a local web server, such as the Live Server option in VS Code. __
