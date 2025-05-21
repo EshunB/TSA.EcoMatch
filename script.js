@@ -4,7 +4,7 @@ import carDatabase from './carDatabase.js';
 
 const questions = [
     {
-        question: "What is your budget?",
+        question: "What is your budget for an EV?",
         answers: [
             { text: "Less Than $30,000", score: { price_score: 1 } },
             { text: "$30,000 To $50,000", score: { price_score: 2 } },
@@ -14,7 +14,7 @@ const questions = [
         ]
     },
     {
-        question: "How important is style and design to you?",
+        question: "Are the aesthetics of the car imporant to you?",
         answers: [
             { text: "Not Important", score: { style_score: 1 } },
             { text: "Somewhat Important", score: { style_score: 2 } },
@@ -24,7 +24,7 @@ const questions = [
         ]
     },
     {
-        question: "What range do you need?",
+        question: "What kind of range do you need?",
         answers: [
             { text: "Less than 200 miles", score: { range_score: 1, mileage_score: 1 } },
             { text: "200-250 miles", score: { range_score: 2, mileage_score: 2 } },
@@ -34,7 +34,7 @@ const questions = [
         ]
     },
     {
-        question: "What size vehicle do you prefer?",
+        question: "What size electric vehicle do you need?",
         answers: [
             { text: "Compact Car", score: { size_score: 1 } },
             { text: "Mid-Size Car", score: { size_score: 2 } },
@@ -44,7 +44,7 @@ const questions = [
         ]
     },
     {
-        question: "How many seats do you need?",
+        question: "How many seats do you need in your car?",
         answers: [
             { text: "2 Seats", score: { seats_score: 2, family_score: 0 } },
             { text: "4 Seats", score: { seats_score: 4, family_score: 2 } },
@@ -63,7 +63,7 @@ const questions = [
         ]
     },
     {
-        question: "How important is performance?",
+        question: "How important is the performance of the car?",
         answers: [
             { text: "Not Important", score: { speed_score: 1, performance_score: 1 } },
             { text: "Somewhat Important", score: { speed_score: 2, performance_score: 2 } },
