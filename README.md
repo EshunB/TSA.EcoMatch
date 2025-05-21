@@ -12,4 +12,5 @@ Our project utilizes a large database and a short but efficient quiz to help cus
 
 
 
+
 __ If you encounter any issues running the Quiz on your local machine, please make sure you are using a local web server, such as the Live Server option in VS Code. __
