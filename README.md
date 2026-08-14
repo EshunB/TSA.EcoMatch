@@ -1,5 +1,11 @@
 # Eco Match
 
+## Open the App
+
+Click or copy and paste the link below into your browser.
+
+[https://eshunb.github.io/Project.EcoMatch/](https://eshun.net/ecomatchdemo/)
+
 ### Real-Time Captions in Your Browser
 
 Project for the 2025 TSA National Competition.
@@ -11,11 +17,3 @@ When we first read the prompt, we were stuck for days and didn't have a clue wha
 As more and more electric vehicles are hitting the market, it can be overwhelming for people to decide on which EV is best suited for their needs. The process of finding the right one might turn people away from buying an electric vehicle.
 
 Our project utilizes a large database and a short but efficient quiz to help customers find the perfect EV car for them in less than two minutes.
-
----
-
-## Open the App
-
-Click or copy and paste the link below into your browser.
-
-https://eshunb.github.io/Project.EcoMatch/
