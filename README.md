@@ -4,7 +4,7 @@
 
 Click or copy and paste the link below into your browser.
 
-[https://eshunb.github.io/Project.EcoMatch/](https://eshun.net/ecomatchdemo/)
+https://eshun.net/ecomatchdemo/
 
 ### Real-Time Captions in Your Browser
 
